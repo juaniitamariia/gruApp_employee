@@ -1,0 +1,24 @@
+<ion-content>
+  <div class="orange-bg">
+    <ion-button class="arrow-btn" (click)="goBack()">
+      <ion-icon class="arrow" ios="ios-arrow-back" md="ios-arrow-back"></ion-icon>
+    </ion-button>
+    <ion-img class="logo" src="/assets/logo.svg" style="float:left"></ion-img>
+    <div class="verify-phone">
+      <span>Verificación de teléfono</span>
+    </div>
+  </div>
+
+  <div id="form">
+    <ion-input type="number" class="verification-code" placeholder="&bull;" maxLength="1" size="1" min="0" max="9"
+      pattern="[0-9]{1}"></ion-input>
+    <ion-input type="number" class="verification-code" placeholder="&bull;" maxLength="1" size="1" min="0" max="9"
+      pattern="[0-9]{1}"></ion-input>
+    <ion-input type="number" class="verification-code" placeholder="&bull;" maxLength="1" size="1" min="0" max="9"
+      pattern="[0-9]{1}"></ion-input>
+    <ion-input type="number" class="verification-code" placeholder="&bull;" maxLength="1" size="1" min="0" max="9"
+      pattern="[0-9]{1}"></ion-input>
+  </div>
+</ion-content>
+
+<ion-button expand="full" (click)="openPage()" class="start-btn">VERIFICAR</ion-button>

@@ -1,0 +1,7 @@
+{
+  "name": "gruApp-employee",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

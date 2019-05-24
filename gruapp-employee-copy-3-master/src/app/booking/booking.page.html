@@ -1,0 +1,81 @@
+<div class="nav-bar">
+  <ion-row ion-align-items-center>
+    <ion-col size="2">
+      <ion-button class="circle-btn" href="/get-service">
+        <ion-icon class="arrow-btn" ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+      </ion-button>
+    </ion-col>
+    <ion-col size="8">
+      <h6 class="order-number" style="text-align: center">#123456</h6>
+    </ion-col>
+    <ion-col size="2"></ion-col>
+  </ion-row>
+</div>
+
+<ion-content>
+  <ion-card class="card-order">
+    <ion-row ion-align-items-center>
+      <ion-col size="2">
+        <ion-avatar class="profile-pic">
+          <img src="assets/girl.jpg">
+        </ion-avatar>
+      </ion-col>
+      <ion-col size="8">
+        <h6 class="profile-name">Jane Doe</h6>
+      </ion-col>
+      <ion-col size="2">
+        <p class="price">$90.00</p>
+        <p class="miles">2.2mi</p>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <ion-card class="pick-up-point">
+    <ion-row ion-align-items-center>
+      <ion-col size="9">
+        <p class="pick-up-title">RECOGIDO</p>
+        <p class="pick-up-address">7958 Swift Village</p>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button class="pick-up-btn">Como llegar</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <ion-card class="end-up-point">
+    <ion-row ion-align-items-center>
+      <ion-col size="9">
+        <p class="end-up-title">DESTINO</p>
+        <p class="end-point-address">105 William St, Chicago US</p>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button class="end-up-btn">Como llegar</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <ion-card class="call-card">
+    <ion-button class="card-btn">
+      <div class="btn-block">
+        <div>
+          <ion-icon class="phone-icon" ios="ios-call" md="md-call"></ion-icon>
+        </div>
+        <div>
+          <p style="margin: 0;">Llamar</p>
+        </div>
+      </div>
+    </ion-button>
+  </ion-card>
+</ion-content>
+
+
+<!-- <ion-button class="done-btn" expand="full" (click)="openPage()">TERMINADO</ion-button> -->
+<ion-row>
+  <ion-col style="padding: 0;" size="6">
+    <ion-button (click)="openPage()" expand="full" class="done-btn">
+      TERMINADO
+    </ion-button>
+  </ion-col>
+  <ion-col style="padding: 0;" size="6">
+    <ion-button (click)="goBack()" expand="full" class="cancel-btn">
+      CANCELAR
+    </ion-button>
+  </ion-col>
+</ion-row>
