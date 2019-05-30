@@ -72,7 +72,7 @@
       <ion-col size="6">
         <p class="total">Total: <span style="font-weight: bold;">${{item.price}}</span></p>
         <p>Servicio: <span style="font-weight: bold;">{{item.service}}</span></p>
-        <p class="miles">Millaje: <span style="font-weight: bold;">2.45mi</span></p>
+        <!-- <p class="miles">Millaje: <span style="font-weight: bold;">2.45mi</span></p> -->
       </ion-col>
     </ion-row>
   </div>
@@ -86,7 +86,7 @@
 </ion-card>
 <ion-row>
   <ion-col style="padding: 0;" size="6">
-    <ion-button (click)="openPage()" expand="full" class="accept-btn">
+    <ion-button (click)="getPhone(item.objectId)" expand="full" class="accept-btn">
       ACEPTAR
     </ion-button>
   </ion-col>

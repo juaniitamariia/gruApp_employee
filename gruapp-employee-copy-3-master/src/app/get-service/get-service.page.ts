@@ -26,9 +26,8 @@ export class GetServicePage implements OnInit {
   length: number = 0
 
   ngOnInit() {
-    console.log(this.provider.nombre);
     this.getCurrentLocation()
-    // this.getServices()
+    this.getServices()
   }
 
   openCustom(){
@@ -104,6 +103,21 @@ export class GetServicePage implements OnInit {
     }, (error) => {
       console.log(error);
     });
+  }
+
+
+  getPhone(serviceId:any)
+  {
+        
+      Parse.Cloud.run('getBooking',{serviceId: serviceId}).then((result)=>
+      {
+        console.log(result);
+        this.openPage();
+      },
+      (error)=>
+      { 
+        console.log(error);
+      });
   }
 
   logOut() {

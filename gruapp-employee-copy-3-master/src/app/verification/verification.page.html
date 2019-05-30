@@ -10,15 +10,16 @@
   </div>
 
   <div id="form">
-    <ion-input type="number" class="verification-code" placeholder="&bull;" maxLength="1" size="1" min="0" max="9"
-      pattern="[0-9]{1}"></ion-input>
-    <ion-input type="number" class="verification-code" placeholder="&bull;" maxLength="1" size="1" min="0" max="9"
-      pattern="[0-9]{1}"></ion-input>
-    <ion-input type="number" class="verification-code" placeholder="&bull;" maxLength="1" size="1" min="0" max="9"
-      pattern="[0-9]{1}"></ion-input>
-    <ion-input type="number" class="verification-code" placeholder="&bull;" maxLength="1" size="1" min="0" max="9"
+    <ion-input id=one #one type="number" class="verification-code" placeholder="&bull;" maxLength="1" size="1" min="1" max="9"
+      pattern="[0-9]{1}" (keyup)="gotoNextField(two)">  </ion-input>
+    <ion-input id=two #two type="number" class="verification-code" placeholder="&bull;" maxLength="1" size="1" min="0" max="9"
+      pattern="[0-9]{1}" (keyup) ="gotoNextField(three)"></ion-input>
+    <ion-input id=three #three type="number" class="verification-code" placeholder="&bull;" maxLength="1" size="1" min="0" max="9"
+      pattern="[0-9]{1}" (keyup)="gotoNextField(four)" ></ion-input>
+    <ion-input id=four #four type="number" class="verification-code" placeholder="&bull;" maxLength="1" size="1" min="0" max="9"
       pattern="[0-9]{1}"></ion-input>
   </div>
 </ion-content>
 
+<ion-button margin=20px expand="block" (click)= reSendCode()>Reenviar</ion-button>
 <ion-button expand="full" (click)="openPage()" class="start-btn">VERIFICAR</ion-button>

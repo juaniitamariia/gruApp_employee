@@ -8,6 +8,13 @@
   height: 300px;
 }
 
+.circle-btn {
+  position: absolute;
+  top: 13px;
+  --background: trasparent;
+  --background-activated: trasparent;
+}
+
 .profile-circle {
   position: absolute;
   left: 0;
@@ -37,18 +44,11 @@
   color: rgb(255, 255, 255);
 }
 
-.circle-btn {
-  --background: #fdbc18;
-  --background-activated: transparent;
-}
-
 .menu-btn {
   color: rgb(255, 255, 255);
 }
 
-.circle-btn {
-  --box-shadow: none;
-}
+
 
 .orange-banner {
   height: 300px;
@@ -56,9 +56,8 @@
 }
 
 .nav-bar {
-  padding-top: 30px;
+  height: 60px;
   background-color: #fdbc18;
-  height: 350px;
 }
 
 .borders {
