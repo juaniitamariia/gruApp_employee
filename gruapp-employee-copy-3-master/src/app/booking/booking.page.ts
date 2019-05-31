@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from "@ionic/angular";
 import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions/ngx';
+import { GruproviderService } from '../gruprovider.service';
+import * as Parse from 'parse';
+
+let parse = require('parse');
 
 @Component({
   selector: 'app-booking',
@@ -9,9 +13,16 @@ import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/na
 })
 export class BookingPage implements OnInit {
 
-  constructor(public navigate : NavController, public nativePageTransitions: NativePageTransitions) { }
+  serviceInfo : any;
+
+  constructor(public navigate : NavController, public nativePageTransitions: NativePageTransitions,
+              public provider : GruproviderService) { 
+    parse.serverURL = 'https://parseapi.back4app.com/';
+    Parse.initialize("guMi91jQ9mwtDypMkb74aFyKPmI0sQN2CY9TPHW2", "qEd42GYwiQaSxPHkgST0XJXOFqeacdlz4vPYNZh8"); 
+              }
 
   ngOnInit() {
+    this.getInfo();
   }
 
   openPage() {
@@ -44,6 +55,24 @@ export class BookingPage implements OnInit {
     this.nativePageTransitions.slide(options);
     this.navigate.navigateRoot("/get-service");
   
+  }
+
+  getInfo(){
+    
+    Parse.Cloud.run('getBooking',{serviceId: this.provider.serviceId}).then((result)=>
+    {
+      console.log(result);
+      console.log(result.toJSON())
+      var name = result.toJSON().get(result.name)
+      console.log("nombre " + name)
+      this.serviceInfo = result
+    },
+    (error)=>
+    { 
+      console.log(error);
+    });
+
+ 
   }
 
 }

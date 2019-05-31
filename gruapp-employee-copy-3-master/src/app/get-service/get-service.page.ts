@@ -105,17 +105,20 @@ export class GetServicePage implements OnInit {
   }
 
 
-  getPhone(serviceId:any){
-        
-      Parse.Cloud.run('getBooking',{serviceId: serviceId}).then((result)=>
-      {
-        console.log(result);
-        this.openPage();
-      },
-      (error)=>
-      { 
-        console.log(error);
-      });
+  getPhone(serviceId){
+    this.provider.serviceId = serviceId;
+    console.log(serviceId)
+
+    Parse.Cloud.run('getBooking',{serviceId: this.provider.serviceId}).then((result)=>
+    {
+      console.log(result);
+      
+    },
+    (error)=>
+    { 
+      console.log(error);
+    });
+    this.openPage();
   }
 
   logOut() {

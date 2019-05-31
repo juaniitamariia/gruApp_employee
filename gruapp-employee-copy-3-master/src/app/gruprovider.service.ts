@@ -19,6 +19,7 @@ username : string;
 company: any;
 verificationCode: any;
 currentUser: any;
+serviceId : any; //para saber que servicio se aceptó
 
   constructor() { parse.serverURL = 'https://parseapi.back4app.com/';
   Parse.initialize("guMi91jQ9mwtDypMkb74aFyKPmI0sQN2CY9TPHW2", "qEd42GYwiQaSxPHkgST0XJXOFqeacdlz4vPYNZh8");  }
