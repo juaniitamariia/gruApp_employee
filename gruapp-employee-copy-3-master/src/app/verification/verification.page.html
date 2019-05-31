@@ -10,14 +10,14 @@
   </div>
 
   <div id="form">
-    <ion-input id=one #one type="number" class="verification-code" placeholder="&bull;" maxLength="1" size="1" min="1" max="9"
-      pattern="[0-9]{1}" (keyup)="gotoNextField(two)">  </ion-input>
+    <ion-input id=one #one type="number" class="verification-code" placeholder="&bull;" maxLength="1" size="1" min="0" max="99999"
+      pattern="[0-9]" (keyup)="gotoNextField(two)">  </ion-input>
     <ion-input id=two #two type="number" class="verification-code" placeholder="&bull;" maxLength="1" size="1" min="0" max="9"
-      pattern="[0-9]{1}" (keyup) ="gotoNextField(three)"></ion-input>
+      pattern="regularExp" (keyup) ="gotoNextField(three)"></ion-input>
     <ion-input id=three #three type="number" class="verification-code" placeholder="&bull;" maxLength="1" size="1" min="0" max="9"
-      pattern="[0-9]{1}" (keyup)="gotoNextField(four)" ></ion-input>
+      pattern="regularExp" (keyup)="gotoNextField(four)" ></ion-input>
     <ion-input id=four #four type="number" class="verification-code" placeholder="&bull;" maxLength="1" size="1" min="0" max="9"
-      pattern="[0-9]{1}"></ion-input>
+      pattern="regularExp"></ion-input>
   </div>
 </ion-content>
 

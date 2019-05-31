@@ -32,10 +32,16 @@ export class AddTowingPage implements OnInit {
   }
 
   saveTowing(){
-    Parse.Cloud.run('createTowing', {userId: Parse.User.current().id, color: this.color, make: this.marca, year: this.year, model: this.modelo, licensePlateNum: this.tablilla }).then((result) =>  
+    if(this.tablilla.length == 6 || this.tablilla.length==7){
+        Parse.Cloud.run('createTowing', {userId: Parse.User.current().id, color: this.color, make: this.marca, year: this.year, model: this.modelo, licensePlateNum: this.tablilla }).then((result) =>  
     {
-     this.location.back(); 
+      console.log(this.color, this.marca,  this.year,this.modelo, this.tablilla);
+     //this.location.back(); 
   });
+    }else{
+      console.log("Error");
+    }
+   
   }
 
   openPage() {

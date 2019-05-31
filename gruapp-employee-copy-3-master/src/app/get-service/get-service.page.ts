@@ -44,8 +44,7 @@ export class GetServicePage implements OnInit {
           () => console.log('Request successful'),
           error => console.log('Error requesting location permissions', error)
         );
-      }
-    
+      }  
     });
 
     this.geolocation.getCurrentPosition().then((resp) => {
@@ -106,8 +105,7 @@ export class GetServicePage implements OnInit {
   }
 
 
-  getPhone(serviceId:any)
-  {
+  getPhone(serviceId:any){
         
       Parse.Cloud.run('getBooking',{serviceId: serviceId}).then((result)=>
       {

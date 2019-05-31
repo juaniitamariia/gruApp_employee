@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { GruproviderService } from "./../gruprovider.service";
 import { NavController } from "@ionic/angular";
 import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions/ngx';
-
+import * as Parse from 'parse';
+let parse = require('parse');
 @Component({
   selector: 'app-verification',
   templateUrl: './verification.page.html',
@@ -54,10 +55,21 @@ export class VerificationPage implements OnInit {
     this.navigate.navigateRoot("/verify-password");
   
   }
+  add(input){
+    this.numbers += input.toString();
+    console.log(this.numbers);
+ }
+
+numbersOnly(input){
+ var regularExp = /[^0-9]/;
+ input.value = input.value.replace(regularExp, "");
+}
+
 
   gotoNextField(nextElement){
     nextElement.setFocus();
   }
+
   navigateFoward(){
 
     let options: NativeTransitionOptions = {
